@@ -23,6 +23,9 @@ h1{
 /*Encabezado y Menu*/
 header{
     position: fixed; /*Deja fijo el header aunque se mueva la pag*/
+    top: 0;
+    left: 0;
+    right: 0;
     height: 90px;
     z-index: 1;
     background-color: #f1ece0;
