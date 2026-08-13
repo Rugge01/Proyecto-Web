@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+*{box-sizing: border-box;}
+
+body{
+    background-color: white;
+    margin: 0 auto;
+    max-width: 1920px;
+    font-family: "Roboto", sans-serif;
+}
+
+html{scroll-behavior: smooth;} /*Hace que baje segun vinculos mas agradable a la vista*/
+
+body, header, nav, section, main, footer{width: 100%;}
+h1, h2, h3, h4, h5, h6{margin-top: 0; font-size: 30px;}
+
+h1{
+    font-size: 40px;
+    text-align: center;
+    font-weight: 900;
+    color: #2c5636;
+}
+
+/*Encabezado y Menu*/
+header{
+    position: fixed; /*Deja fijo el header aunque se mueva la pag*/
+    height: 90px;
+    z-index: 1;
+    background-color: #f1ece0;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+/*Este es un Div que se utiliza de relleno en el header, luego se le sombrea*/
+#relleno{height: 90px;}
+
+nav{
+    height: 90px;
+    position: relative;
+}
+
+nav ul{
+    height: inherit;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: 100px;
+}
+
+nav ul li{
+    color: #2c5636;
+    padding: 0 25px;
+    height: 90px;
+    display: inline-block; /*Hace que se muestre en linea*/
+    line-height: 90px;
+    font-weight: 600px;
+    margin-right: -4px;
+    border-right: 1px solid rgba(0, 0, 0, 0.2); /*Borde separacion lista*/
+}
+
+/*Hover hace que el color de fondo varie cuando se posiciona el cursor sobre ellos*/
+nav ul li:hover{background-color: rgba(0, 109, 27, 0.4);}
+
+#logoNav{
+    width: 200px;
+    position: absolute;
+    top: 8px;
+    left: 100px;
+}
+#logoNav img{width: 100%;}
+
+/*Marcadores*/
+#marcadorUno{
+    scroll-margin-top: 100px;
+}
+
+#bannerPrincipal{
+    height: 650px;
+    padding-top: 150px;
+    border-bottom: #2c5636 10px solid;
+
+    /* Propiedades Imagen fondo*/
+    background-color: gray;
+    background-image: url(../imagenes/banner-principal.webp); /*Se utiliza ../ para salir de la carpeta y buscar la img*/
+    background-repeat: no-repeat; /*Hace que la imagen background no se clone o repita*/
+    background-position: center center;
+    background-size: cover;
+    
+}
+
+#bannerPrincipal span{
+    font-size: 38px;
+    font-weight: 700;
+    color: white;
+    text-align: center;
+    text-shadow: 0 3px 6px #000;
+    display: flex;
+    justify-content: center;
+}
+
+/* Lineas */
+#lineaUno{width: 70%;}
+hr{width: 100%; border-color: rgba(255, 255, 255, 0.7);}
+
+main{
+    background-color: #fff;
+    height: auto;
+    padding: 100px;
+}
+
+/* Sector Nosotros*/
+#nosotros{
+    margin: 50px 0;
+    padding: 0px 70px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#infoHistoria{width: 45%;}
+#infoHistoria h2{
+    text-align: center;
+    font-size: 30px;
+}
+#infoHistoria p{
+    line-height: 24px;
+    font-size: 18px;
+    text-align: center;
+}
+
+#fotoHistoria{width: 35%;}
+#fotoHistoria img{width: 100%;}
+
+/* Destacados de la Semana */
+#destacados{margin: 50px 0;}
+#destacados h2{text-align: center; font-weight: 900;}
+#plantas{
+    width: 100%;
+    display: flex; /*Hace que se acomoden una de lado de la otra*/
+    flex-wrap: wrap; /*Hace que las que no entren en el ancho se coloquen debajo*/
+    justify-content: space-between; /*Deja esapcio entre cada tarjeta*/
+}
+.fotoPlanta{
+    background-color: #ccc;
+    width: 23%;
+    height: 370px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 5px;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+#p1{background-image: url(../imagenes/destacados/planta1.webp);}
+#p2{background-image: url(../imagenes/destacados/planta2.webp);}
+#p3{background-image: url(../imagenes/destacados/planta3.webp);}
+#p4{background-image: url(../imagenes/destacados/planta4.webp);}
+#p5{background-image: url(../imagenes/destacados/planta5.webp);}
+#p6{background-image: url(../imagenes/destacados/planta6.webp);}
+#p7{background-image: url(../imagenes/destacados/planta7.webp);}
+#p8{background-image: url(../imagenes/destacados/planta8.webp);}
+
+.fotoPlanta h3{
+    width: 100%;
+    font-size: 20px;
+    text-align: center;
+    margin: 0;
+    color: white;
+    padding: 12px 0;
+    position: absolute;
+    bottom: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.fotoPlanta:hover{box-shadow: 0 3px 20px rgba(0, 0, 0, 0.4);}
+
+/* Video de YouTube */
+#consejos{margin: 50px 0;}
+#consejos h3{
+    text-align: center;
+    font-weight: 900;
+}
+
+iframe{
+    width: 100%;
+    height: 600px;
+    border: 6px solid #4f9623;
+}
+
+footer{
+    height: 600px;
+    background-color: black;
+}
+
