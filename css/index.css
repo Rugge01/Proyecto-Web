@@ -1,25 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 *{box-sizing: border-box;}
-
+ 
 body{
     background-color: white;
     margin: 0 auto;
     max-width: 1920px;
     font-family: "Roboto", sans-serif;
 }
-
+ 
 html{scroll-behavior: smooth;} /*Hace que baje segun vinculos mas agradable a la vista*/
-
+ 
 body, header, nav, section, main, footer{width: 100%;}
 h1, h2, h3, h4, h5, h6{margin-top: 0; font-size: 30px;}
-
+ 
 h1{
     font-size: 40px;
     text-align: center;
     font-weight: 900;
     color: #2c5636;
 }
-
+ 
 /*Encabezado y Menu*/
 header{
     position: fixed; /*Deja fijo el header aunque se mueva la pag*/
@@ -28,15 +28,15 @@ header{
     background-color: #f1ece0;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
 }
-
+ 
 /*Este es un Div que se utiliza de relleno en el header, luego se le sombrea*/
 #relleno{height: 90px;}
-
+ 
 nav{
     height: 90px;
     position: relative;
 }
-
+ 
 nav ul{
     height: inherit;
     margin: 0;
@@ -44,7 +44,7 @@ nav ul{
     position: absolute;
     right: 100px;
 }
-
+ 
 nav ul li{
     color: #2c5636;
     padding: 0 25px;
@@ -55,10 +55,10 @@ nav ul li{
     margin-right: -4px;
     border-right: 1px solid rgba(0, 0, 0, 0.2); /*Borde separacion lista*/
 }
-
+ 
 /*Hover hace que el color de fondo varie cuando se posiciona el cursor sobre ellos*/
 nav ul li:hover{background-color: rgba(0, 109, 27, 0.4);}
-
+ 
 #logoNav{
     width: 200px;
     position: absolute;
@@ -66,26 +66,48 @@ nav ul li:hover{background-color: rgba(0, 109, 27, 0.4);}
     left: 100px;
 }
 #logoNav img{width: 100%;}
-
+ 
+/* Botón hamburguesa: oculto en desktop */
+#btnMenu{
+    display: none;
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: #2c5636;
+    cursor: pointer;
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    padding: 0;
+}
+ 
 /*Marcadores*/
 #marcadorUno{
     scroll-margin-top: 100px;
 }
-
+ 
+#marcadorDos, #marcadorTres{
+    scroll-margin-top: 100px;
+}
+ 
+#marcadorCuatro{
+    scroll-margin-top: 0;
+}
+ 
 #bannerPrincipal{
     height: 650px;
     padding-top: 150px;
     border-bottom: #2c5636 10px solid;
-
+ 
     /* Propiedades Imagen fondo*/
     background-color: gray;
     background-image: url(../imagenes/banner-principal.webp); /*Se utiliza ../ para salir de la carpeta y buscar la img*/
     background-repeat: no-repeat; /*Hace que la imagen background no se clone o repita*/
     background-position: center center;
     background-size: cover;
-    
+ 
 }
-
+ 
 #bannerPrincipal span{
     font-size: 38px;
     font-weight: 700;
@@ -95,17 +117,17 @@ nav ul li:hover{background-color: rgba(0, 109, 27, 0.4);}
     display: flex;
     justify-content: center;
 }
-
+ 
 /* Lineas */
 #lineaUno{width: 70%;}
 hr{width: 100%; border-color: rgba(255, 255, 255, 0.7);}
-
+ 
 main{
     background-color: #fff;
     height: auto;
     padding: 100px;
 }
-
+ 
 /* Sector Nosotros*/
 #nosotros{
     margin: 50px 0;
@@ -114,7 +136,7 @@ main{
     justify-content: space-around;
     align-items: center;
 }
-
+ 
 #infoHistoria{width: 45%;}
 #infoHistoria h2{
     text-align: center;
@@ -125,10 +147,10 @@ main{
     font-size: 18px;
     text-align: center;
 }
-
+ 
 #fotoHistoria{width: 35%;}
 #fotoHistoria img{width: 100%;}
-
+ 
 /* Destacados de la Semana */
 #destacados{margin: 50px 0;}
 #destacados h2{text-align: center; font-weight: 900;}
@@ -149,7 +171,7 @@ main{
     margin-bottom: 25px;
     position: relative;
 }
-
+ 
 #p1{background-image: url(../imagenes/destacados/planta1.webp);}
 #p2{background-image: url(../imagenes/destacados/planta2.webp);}
 #p3{background-image: url(../imagenes/destacados/planta3.webp);}
@@ -158,7 +180,7 @@ main{
 #p6{background-image: url(../imagenes/destacados/planta6.webp);}
 #p7{background-image: url(../imagenes/destacados/planta7.webp);}
 #p8{background-image: url(../imagenes/destacados/planta8.webp);}
-
+ 
 .fotoPlanta h3{
     width: 100%;
     font-size: 20px;
@@ -170,24 +192,172 @@ main{
     bottom: 10px;
     background-color: rgba(0, 0, 0, 0.7);
 }
-
+ 
 .fotoPlanta:hover{box-shadow: 0 3px 20px rgba(0, 0, 0, 0.4);}
-
+ 
+/* Árboles de Estación */
+#arbolesSeccion{margin: 50px 0;}
+#arbolesSeccion h2{text-align: center; font-weight: 900;}
+ 
+#arboles{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+ 
+.fotoArbol{
+    background-color: #ccc;
+    width: 23%;
+    height: 370px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 5px;
+    margin-bottom: 25px;
+    position: relative;
+}
+ 
+#a1{background-image: url(../imagenes/destacados/arbol1.webp);}
+#a2{background-image: url(../imagenes/destacados/arbol2.webp);}
+#a3{background-image: url(../imagenes/destacados/arbol3.webp);}
+#a4{background-image: url(../imagenes/destacados/arbol4.webp);}
+ 
+.fotoArbol h3{
+    width: 100%;
+    font-size: 20px;
+    text-align: center;
+    margin: 0;
+    color: white;
+    padding: 12px 0;
+    position: absolute;
+    bottom: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+ 
+.fotoArbol:hover{box-shadow: 0 3px 20px rgba(0, 0, 0, 0.4);}
+ 
 /* Video de YouTube */
 #consejos{margin: 50px 0;}
 #consejos h3{
     text-align: center;
     font-weight: 900;
 }
-
+ 
 iframe{
     width: 100%;
     height: 600px;
     border: 6px solid #4f9623;
 }
-
+ 
+/* Footer / Contacto */
 footer{
-    height: 600px;
-    background-color: black;
+    min-height: 350px;
+    height: auto;
+    background-color: #2c5636;
+    color: white;
+    padding: 50px 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
-
+ 
+#contactoInfo h2{
+    color: white;
+    text-align: center;
+}
+ 
+#datosContacto{
+    text-align: center;
+    line-height: 32px;
+    font-size: 18px;
+}
+ 
+#redesSociales{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+ 
+#redesSociales a{
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s ease;
+}
+ 
+#redesSociales a:hover{
+    border-color: white;
+}
+ 
+#copyright{
+    text-align: center;
+    font-size: 14px;
+    opacity: 0.7;
+    margin-bottom: 0;
+}
+ 
+/* ===================== RESPONSIVE ===================== */
+ 
+/* ===== Tablet ===== */
+@media (max-width: 900px){
+    #logoNav{
+        left: 25px;
+        width: 150px;
+        top: 15px;
+    }
+ 
+    #btnMenu{display: block;}
+ 
+    nav ul{
+        right: 0;
+        top: 90px;
+        width: 100%;
+        background-color: #f1ece0;
+        flex-direction: column;
+        display: none; /* se muestra con JS al clickear */
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    }
+ 
+    nav ul.abierto{display: flex;}
+ 
+    nav ul li{
+        height: 60px;
+        line-height: 60px;
+        width: 100%;
+        text-align: center;
+        border-right: none;
+        border-bottom: 1px solid rgba(0,0,0,0.2);
+    }
+ 
+    main{padding: 40px 25px;}
+ 
+    #nosotros{
+        flex-direction: column;
+        padding: 0;
+    }
+    #infoHistoria, #fotoHistoria{width: 100%;}
+    #fotoHistoria{margin-top: 25px;}
+ 
+    .fotoPlanta, .fotoArbol{width: 48%;} /* 2 por fila en vez de 4 */
+ 
+    footer{padding: 30px 25px;}
+}
+ 
+/* ===== Celular chico ===== */
+@media (max-width: 500px){
+    #bannerPrincipal span{font-size: 24px;}
+    h1{font-size: 28px;}
+ 
+    .fotoPlanta, .fotoArbol{width: 100%;} /* 1 por fila */
+ 
+    iframe{height: 250px;}
+ 
+    #redesSociales{
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+}
